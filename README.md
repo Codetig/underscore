@@ -16,3 +16,58 @@ Implement these Underscore.js Methods
 ### Bonus
 
 Implement the function flatten  - [http://underscorejs.org/#flatten](http://underscorejs.org/#flatten) - you will need to use recursion to solve this.
+
+******
+In-Class Excercise
+  Array.push re-implemented:
+  function pusho(arr, item){
+    if(Array.isArray(arr)){
+    arr.splice(arr.length, 0, item);
+    return arr.length;
+    }
+    throw TypeError("The first character must be an array");
+  }
+
+  obj = {a:"apple", b:"banana", c:"cantelope"}
+  for(var fruit in obj){
+    console.log( "Fruit " + fruit + " = " + obj[fruit]);
+  }
+
+  .map function
+  function mapo(arr, callback){
+    var arr1 = [];
+    arr.forEach(function(e){
+    arr1.push(callback(e));
+    });
+    return arr1;
+  }
+
+  .filter
+  function filtero(arr, callback){
+    var arr1 = [];
+    arr.forEach(function(e){
+    if(callback(e)){
+    arr1.push(e);
+    }
+    });
+    return arr1
+  }
+
+  Object Constructor
+  var House = function(rooms, parking){
+    this.rooms = rooms,
+    this.parking = parking
+  };
+
+  object instance method
+  House.prototype.showRooms = function(){alert("This house has " + this.rooms + "rooms");};
+
+  Object class property
+  House.prototype.neighborhood = [];
+
+  ***Runs say("Hello")("world") and returns => "Hello world"
+  var say = function(string1) {
+    return (function(string2){
+      return string1 + " " + string2;
+      });
+  }
